@@ -11,3 +11,11 @@
 #
 #     def get_books(self) -> List["Book"]:
 #         return self.book_dao.get_books()
+def serializ(model, object):
+    dct = model.dump(object)
+    return dct
+
+
+def deserializ(model, object):
+    dct = model.load(object)
+    return dct
