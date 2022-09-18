@@ -14,6 +14,8 @@ class Movie(db.Model):
     # делаем связь один ко многим.    \/здесь делаем внешний ключ('название таблицы.столбик')
     genre_id = db.Column(db.Integer, db.ForeignKey('genre.id'))
     director_id = db.Column(db.Integer, db.ForeignKey('director.id'))
+    director = db.relationship('Director')
+    genre = db.relationship('Genre')
 
 
 class MovieSchema(Schema):

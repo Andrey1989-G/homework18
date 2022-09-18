@@ -1,4 +1,4 @@
-from model.genre_model import Genre
+from flask_hard_blank.dao.model.genre_model import Genre
 
 #crud но без ud
 

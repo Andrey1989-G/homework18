@@ -1,5 +1,7 @@
-from model.director_model import Director
+
 #crud
+from flask_hard_blank.dao.model.director_model import Director
+
 
 class DirectorDao:
     """

@@ -10,19 +10,19 @@ director_schema = DirectorSchema()
 # Множественная сериализация
 directors_schema = DirectorSchema(many=True)
 
-
 director_ns = Namespace('directors')
+
 
 @director_ns.route('/')
 class DirectorsView(Resource):
-    def page_all_directors(self):
+    def get(self):
         res = director_dao.get_all()
-        return res, 200
+        return directors_schema.dump(res), 200
 
 
 @director_ns.route('/<int:did>')
-class DirectorsView(Resource):
-    def page_all_directors(self, did):
+class DirectorView(Resource):
+    def get(self, did):
         res = director_dao.get_one(did)
-        return res, 200
+        return director_schema.dump(res), 200
 

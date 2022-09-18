@@ -1,10 +1,11 @@
-from model.movie_model import Movie
+from flask_hard_blank.dao.model.movie_model import Movie
 
 
-#crud
+# crud
+from flask_hard_blank.setup_db import db
 
 
-class MovieDao:
+class MovieDAO:
     def __int__(self, session):
         self.session = session
 
@@ -46,7 +47,7 @@ class MovieDao:
 
     def movie_refactor(self, movie):
         self.session.add(movie)
-        self.session.commit
+        self.session.commit()
 
     def movie_del(self, mid):
         movie = self.get_one(mid)

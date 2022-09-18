@@ -1,10 +1,10 @@
-from flask_hard_blank.dao.movie_dao import MovieDao
+
 
 class MovieService:
     """
-    класс сервисов для MovieDao, построенный на crud
+    класс сервисов для MovieDAO, построенный на crud
     """
-    def __int__(self, dao: MovieDao):
+    def __int__(self, dao):
         self.dao = dao
 
     def get_one(self, mid):
@@ -16,7 +16,7 @@ class MovieService:
     def get_movie_all_director(self, data):
         """
         получаем все фильмы режиссера
-        :param data: получаем фамилию режиссера
+        :param data: получаем id режиссера
         :return:
         """
         res = []
@@ -76,3 +76,6 @@ class MovieService:
 
     def movie_del(self, mid):
         return self.dao.movie_del(mid)
+
+res = MovieService()
+print(res.__dict__)
